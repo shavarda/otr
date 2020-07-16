@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-12">
+        <h2>
+            Добавить сотрудника
+        </h2>
+    </div>
+    <div class="col-8">
+        <div class="message"></div>
+        <div class="form-group">
+            <label>Имя сотрудника*</label>
+            <input ng-model="worker.name" type="text" class="form-control" placeholder="Имя сотрудника" name="name">
+        </div>
+        <div class="form-group">
+            <label>Организация</label>
+            <select class="form-control" ng-model="worker.organization">
+                <option ng-repeat="item in organizations" value="{{item.id}}">
+                    {{item.name}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Руководитель</label>
+            <select class="form-control" ng-model="worker.leader">
+                <option ng-repeat="item in workers" value="{{item.id}}">
+                    {{item.name}}
+                </option>
+            </select>
+        </div>
+        <input type="button" class="btn btn-primary" ng-click="addWorker(worker)" value="Сохранить">
+    </div>
+</div>

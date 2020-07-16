@@ -1,0 +1,72 @@
+section {
+    margin-bottom: 30px;
+}
+
+menu {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    background-color: #9D79D2;
+    border-bottom: 2px solid #2B1F5C;
+    text-transform: uppercase;
+}
+
+.nav__elems {
+    display: flex;
+}
+
+.nav__elem {
+    padding-right: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav__elem:hover {
+    color: #2B1F5C;
+    text-decoration: none;
+}
+
+.nav__elem + .nav__elem {
+    padding-left: 15px;
+    border-left: 2px solid #4D2D86;
+}
+
+.add__elem {
+    padding: 7px 32px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #2B1F5C;
+}
+
+.add__elem:hover {
+    opacity: 0.7;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.table {
+    margin-top: 15px;
+}
+
+.search__input {
+    margin-bottom: 20px;
+}
+
+.page-item {
+    cursor: pointer;
+}

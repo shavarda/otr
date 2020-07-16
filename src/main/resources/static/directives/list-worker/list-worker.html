@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-12">
+        <input ng-keyup="searchOrganization(search)" ng-model="search" type="text" class="form-control search__input" placeholder="Введите название организации" name="name">
+    </div>
+    <div class="col-12">
+        <div>
+            <b>Всего:</b> {{commonElement}}
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Имя</th>
+                <th scope="col">Организация</th>
+                <th scope="col">Руководитель</th>
+                <th scope="col">Редактировать</th>
+                <th scope="col">Удалить</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in listPagination">
+                <td>{{item.name}}</td>
+                <td>{{item.organizationName}}</td>
+                <td>{{item.leaderName}}</td>
+                <td scope="col">
+                    <a href="/edit_worker.html?id={{item.id}}">Редактировать</a>
+                </td>
+                <td scope="col">
+                    <input type="button" data-toggle="modal" data-target="#delete" ng-click="modalWorker(item.id)" value="Удалить">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-12">
+        <ul class="pagination">
+            <li class="page-item" ng-repeat="page in pagination" ng-click="showPage(search, page.link)" ng-class="{'active':currentPageNum == page.link}">
+                <a class="page-link" ng-bind-html="page.name"></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                Уверены, что хотите удалить?
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary delete__modal" ng-click="deleteWorker(deleteId)" value="Удалить">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
